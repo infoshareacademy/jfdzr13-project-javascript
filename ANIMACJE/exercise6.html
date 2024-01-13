@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Exercise 4</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <style>
+      @keyframes bounce {
+        0% {
+          transform: translateY(-100vh);
+        }
+
+        60% {
+          transform: translateY(0);
+        }
+
+        70% {
+          transform: translateY(-15px);
+        }
+
+        80% {
+          transform: translateY(0);
+        }
+
+        90% {
+          transform: translateY(-7px);
+        }
+
+        100% {
+          transform: translateY(0);
+        }
+      }
+
+      html, body {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+      }
+
+      body {
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+      }
+
+      .element {
+        animation: bounce 3s linear;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background-color: purple;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="element"></button>
+  </body>
+</html>
