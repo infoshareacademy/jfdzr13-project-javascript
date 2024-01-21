@@ -63,20 +63,101 @@ function itemsInCart(a) {
 }
 console.log("You have " + itemsInCart(1) + "in your cart");
 // Zadanie 8.
-const userAge = prompt("Please enter your age:");
-console.log(userAge);
+// let userAge = prompt("Please enter your age:");
+//  if (userAge<18) {
+//  console.log(`You cannot be a president and can't even drink beer :(`)
+//  }
+//  else if(userAge<35){
+//     console.log(`At least you can have a beer.`)
+//  }
+//  else if (userAge<125 $$ userAge<=0)
+//  {
+
+//  } else {
+
+//  }
 // Zadanie 9.
+function shouldTakeUmbrella(isRaining, hasJacket, longTrip, isSummer) {
+  switch (true) {
+    case isRaining:
+      return true;
+    case !hasJacket && longTrip && !isSummer:
+      return true;
+    default:
+      return false;
+  }
+}
+
+let isRaining = false;
+let hasJacket = false;
+let longTrip = false;
+let isSummer = false;
+
+if (shouldTakeUmbrella(isRaining, hasJacket, longTrip, isSummer)) {
+  console.log("You should take an umbrella!");
+} else {
+  console.log("You do not need an umbrella.");
+}
 
 // Zadanie 10.
-
+function isEqual(a, b) {
+  switch (true) {
+    case a === b:
+      return true;
+    default:
+      return false;
+  }
+}
+console.log(isEqual(200, 100));
 // Zadanie 11.
+function canRideRollerCoaster(age, height) {
+  if (age >= 18 && height >= 175) {
+    return console.log(true, "Can ride!");
+  } else {
+    return console.log(false, "Sorry kiddo, no can do.");
+  }
+}
+canRideRollerCoaster(20, 185);
+
+function canRideRollerCoasterSwitch(age, height) {
+  switch (true) {
+    case age >= 18 && height >= 175:
+      return console.log(true, "Can ride!");
+    default:
+      return console.log(false, "Sorry kiddo, no can do.");
+  }
+}
+canRideRollerCoasterSwitch(18, 185);
 
 // Zadanie 12.
-
+function alphabeticalOrder(word) {
+  const splitting = word.split("");
+  const sorting = splitting.sort();
+  const joining = sorting.join("");
+  return joining;
+}
+console.log(alphabeticalOrder("michal"));
 // Zadanie 13.
+function reverseText(word) {
+  return word.split("").reverse().join("");
+}
+console.log(reverseText("michal"));
 
 // Zadanie 14.
-
+function getInitials(fullName) {
+  const splitting = fullName.split(" ");
+  return splitting.at(0).charAt(0) + "." + splitting.at(1).charAt(0) + ".";
+}
+console.log(getInitials("Hari Pota"));
 // Zadanie 15.
+function slugify(text) {
+  return text.toLowerCase().split(" ").join("-");
+}
+console.log(slugify("Top 10 my favourite songs"));
 
 // Zadanie 16.
+function makeUpperCase(text) {
+  return text.split(" ");
+}
+
+console.log(makeUpperCase("Name of my Blog article"));
