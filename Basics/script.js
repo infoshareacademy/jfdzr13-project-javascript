@@ -63,19 +63,20 @@ function itemsInCart(a) {
 }
 console.log("You have " + itemsInCart(1) + "in your cart");
 // Zadanie 8.
-// let userAge = prompt("Please enter your age:");
-//  if (userAge<18) {
-//  console.log(`You cannot be a president and can't even drink beer :(`)
-//  }
-//  else if(userAge<35){
-//     console.log(`At least you can have a beer.`)
-//  }
-//  else if (userAge<125 $$ userAge<=0)
-//  {
+const prompt = require("prompt-sync")({ sigint: true });
+const userAge = prompt("Type in your age:");
+ if (userAge<18) {
+ console.log(`You cannot be a president and can't even drink beer :(`)
+ }
+ else if(userAge<35){
+    console.log(`At least you can have a beer.`)
+ }
+ else if (userAge<125 $$ userAge<=0)
+ {
 
-//  } else {
+ } else {
 
-//  }
+ }
 // Zadanie 9.
 function shouldTakeUmbrella(isRaining, hasJacket, longTrip, isSummer) {
   switch (true) {
@@ -156,8 +157,14 @@ function slugify(text) {
 console.log(slugify("Top 10 my favourite songs"));
 
 // Zadanie 16.
-function makeUpperCase(text) {
-  return text.split(" ");
+function makeUpperCase(initialText) {
+  const splittedText = initialText.split(" "); //rozbilo na 5 x string
+  for (let i = 0; i < splittedText.length; i++) {
+    const firstLetter = splittedText[i].charAt(0).toUpperCase(); //zwiekszamy pierwsza litere kazdego slowa i ona jest osobnym elementem firstLetter
+    splittedText[i] = firstLetter + splittedText[i].substring(1); //laczymy kazdy element arraya naszego firstLetter + substring(1)
+  }
+  return splittedText.join(" ");
 }
-
-console.log(makeUpperCase("Name of my Blog article"));
+// const prompt = require("prompt-sync")({ sigint: true });
+// const changedText = prompt("Type in or paste your sentence for task 16:");
+// console.log(makeUpperCase(`${changedText}`));
