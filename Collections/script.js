@@ -1,145 +1,62 @@
 import people from "./data.js";
 
-// Zadanie 1.
+// HOMEWORK: Wykonaj ponizsze zadania na przynajmniej 1 sposób.
+// Kazdy z wykonanych sposobów wytłumaczyć przy pomocy komentarzy (przykład powyzej w zadaniu 9);
+// Wstępny termin oddania pracy: 9.02 do północy
+// W przypadku wypełnionych ankiet termin przedłuzamy do 11.01 do północy
+// Sprawdzane będą wyłącznie prace domowe oddane w formie pull requesta
+// Pull request mozna wykonać na repozytorium https://github.com/infoshareacademy/jfdzr13-project-javascript lub swoim repozytorium w organizacji infoShare
 
-// const tickTackToe = [
-//   ["x", "o", "x"],
-//   ["x", "x", "o"],
-//   ["**", "o", "x"],
-// ];
-
-// let results = [];
-
-// for (let i = 0; i < tickTackToe.length; i++) {
-//   for (let x of tickTackToe[i]) {
-//     if (x == "**") {
-//       x = "x";
-//     }
-//     results.push(x);
-//   }
-// }
-
-// console.log(results);
-
-// // Zadanie 2.
-
-// function sumNumbersInArray(array) {
-//   let wynik = 0;
-
-//   for (let i = 0; i < array.length; i++) {
-//     wynik += array[i];
-//   }
-//   return wynik;
-// }
-
-// console.log(sumNumbersInArray([2, 7, 4, 11, -1])); // 23
-// console.log(sumNumbersInArray([0, 8, 3, 14, 1])); // 26
-// console.log(sumNumbersInArray([2, -7, 140, 10, -1])); // 144
-
-// // Zadanie 3.
-
-// function sortArr(type, arr) {
-//   if (type == "asc") return arr.sort((a, b) => a - b);
-//   return arr.sort((a, b) => b - a);
-// }
-// console.log(sortArr("asc", [2, 7, 4, 11, -1]));
-// console.log(sortArr("desc", [2, 7, 4, 11, -1]));
-// console.log(sortArr("asc", [0, 8, 3, 14, 1]));
-// console.log(sortArr("desc", [0, 8, 3, 14, 1]));
-// console.log(sortArr("asc", [2, -7, 140, 10, -1]));
-// console.log(sortArr("desc", [2, -7, 140, 10, -1]));
-// // Zadanie 4.
-
-// function biggestInArray(array1) {
-//   return Math.max(...array1);
-// }
-// console.log(biggestInArray([2, 7, 4, 11, -1]));
-// console.log(biggestInArray([0, 8, 3, 14, 1]));
-// console.log(biggestInArray([2, -7, 140, 10, -1]));
-// // Zadanie 5.
-
-// function reverseArray(array2) {
-//   return array2.reverse();
-// }
-
-// console.log(reverseArray([2, 7, 4, 11, -1]));
-// console.log(reverseArray([0, 8, 3, 14, 1]));
-// console.log(reverseArray([2, -7, 140, 10, -1]));
-
-// Zadanie 6.
-
-function areElemsTruthy(index, array) {
-  let result = [];
-  for (let i = 0; i < index; i++) {}
-}
-
-// Zadanie 7.
-
-function stringLength(array1) {
-  let numbers = [];
-  let number = 0;
-
-  for (let i = 0; i < array1.length; i++) {
-    array1[i].split("");
-    number = array1[i].length;
-    numbers.push(number);
-  }
-
-  return numbers;
-}
-
-console.log(stringLength(["hello", "world", "dog", "sophisticated"])); // [5, 5, 3, 13];
-
-// Zadanie 8.
-
-const numbers = [
-  11, -10, 50, 5, -8, 9, 20, 21, -4, 11, -5, -12, 100, 20, 14, 8, 19, 44, -21,
-  -53, 17, -21,
-];
-
-let newNumbers = numbers.map((x) => x >= 20);
-
-console.log(newNumbers);
-
-// Zadanie 9.
-
-function flatArray(array2) {
-  return array2.flat();
-}
-
-console.log(
-  flatArray([
-    ["a", "b"],
-    [1, 2],
-  ])
-);
-console.log(
-  flatArray([
-    ["red", "blue"],
-    ["green", "red", "yellow"],
-    ["black", "blue"],
-    ["pink", "black", "white"],
-  ])
-);
-
-// Zadanie 10.
-
-function ageOver(entry) {
-  let newArray = [];
-  for (let i = 0; i < entry.length; i++) {
-    if (entry[i].age < 30) {
-      newArray.push(entry[i]);
-    }
-  }
-
-  return newArray;
-}
-
-console.log(ageOver(people));
+// Max punktów do zdobycia: 7
 
 // Zadanie 11.
 
+function peopleAndCar(arr) {
+  //funkcja jako argument przyjmuje tablicę
+  let answer;
+  for (let i = 0; i < arr.length; i++) {
+    //pętla o długości tablicy obiektów
+    let carLength = arr[i].car.split("").length; //moje kryterium czy auto jest fajne czy nudne to czy ilość znaków w nazwie jest parzysta czy nie (używam metody split i sprawdzam długiść tablicy)...
+    if (carLength % 2 == 0) {
+      //... i tutaj sprawdzam ten warunek i wynik przypisuje do zmiennej answer
+      answer = `The user's name is ${arr[i].name} and the user is ${arr[i].age} age years old. The user works as ${arr[i].job} and drives ${arr[i].car} - which is fun car`;
+      console.log(answer); //i wyświetlam w konsoli
+    } else {
+      answer = `The user's name is ${arr[i].name} and the user is ${arr[i].age} age years old. The user works as ${arr[i].job} and drives ${arr[i].car} - which is boring car`;
+      console.log(answer);
+    }
+  }
+  return answer; //tu zwracam funkcję
+}
+peopleAndCar(people); //a tu wywołuje funkcję
+
 // Zadanie 12.
+
+function manAge(arr, age) {
+  //funkcja jako argument przyjmuje tablice i wiek
+  let answer;
+  let helpVar = 0; //zmienna pomocnicza, żeby sprawdzić kiedy przypisać do zmiennej answer właściwą wartość
+  let yearsTogether = 0; //do tej zmiannej dodamy wiek użytkowników którzy spełniają kryteria
+  for (let i = 0; i < arr.length; i++) {
+    //pętla o długości tablicy
+    if (arr[i].age >= age) {
+      //sprawdzam czy jest spałniony warunek podany w argumencie funkcji
+      helpVar++; //uruchamiamy zmienną pomocniczą
+      if (helpVar === 1) {
+        //jeżeli zmianna pomocnicza uruchomiona jest pierwszy raz to do zmiannej answer przypisujemy odpowiednią wartość
+        answer = `The user is ${arr[i].name} and he is ${arr[i].age} years old`;
+        console.log(answer); //wyświetlamy w konsoli
+        yearsTogether += arr[i].age; //dodajemy wiek użytkownków
+      } else {
+        answer = `Next user is ${arr[i].name} and he is ${arr[i].age} years old`;
+        console.log(answer);
+        yearsTogether += arr[i].age;
+      }
+    }
+  }
+  console.log(yearsTogether); //po wyjściu z pętli wyświetlamy sumę wieku użytkowników
+}
+manAge(people, 40); //uruchamiamy funkcję
 
 // Zadanie 13.
 
