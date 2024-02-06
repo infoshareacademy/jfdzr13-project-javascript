@@ -1,4 +1,3 @@
-import people from "./data.js";
 // Zadanie 1.
 const tickTackToe = [
   ["x", "o", "x"],
@@ -153,14 +152,63 @@ let arr2 = [
 ];
 console.log(flatArray(arr2));
 
+import people from "./data.js"; //importuje obiekt z innego pliku
 // Zadanie 10.
+const ageBelow30 = (array) => {
+  //funkcja przyjmuje parametr array (w domysle bedzie to macierz people)
+  const tempArray = array.filter((el) => el.age > 30); //dla kazdego elementu array, filtrujemy po wieku, zmienna el + precyzyjnie el.age)
+  return tempArray; //zwracamy sobie nasze obliczenie czyli nowy obiekt array
+};
+console.log(ageBelow30(people));
 
 // Zadanie 11.
+const userCar = (
+  array //ponownie iterujemy po calej array za pomocą mapa
+) =>
+  array.map(
+    (
+      el //zamiast kazdego elementy, wstawiamy stringa z odniesieniami do poszczegolnych elementow ${}
+    ) =>
+      `The user's name is ${el.name} and the user is ${el.age} years old. The user works as ${el.job} and drives ${el.car}`
+  );
+console.log(userCar(people));
 
+const userCarModified = (
+  array //tutaj początek jest identyczny i zdecydowalem sie na switcha
+) =>
+  array.map((el) => {
+    //od tego miejsca mamy switcha, ktory sprawdza wartosc el.car i zwraca odpowiedni komentarz
+    let comment = "";
+    switch (
+      el.car //konsturkcja switcha, generalnie zrobilem go sam ale gpt mi pomogl bo nie dalem commenta zerowego na poczatek ;/
+    ) {
+      case "Ford Mustang":
+        comment = "fun car";
+        break;
+      case "BMW 3 Series":
+        comment = "fun car";
+        break;
+      default:
+        comment = "boring car";
+        break;
+    } //ponizej identyczny return tylko dodany ${comment}
+    return `The user's name is ${el.name} and the user is ${el.age} years old. The user works as ${el.job} and drives ${el.car} which is a ${comment}`;
+  });
+
+console.log(userCarModified(people));
 // Zadanie 12.
 
-// Zadanie 13.
+const menOlderThan40 = (array) => {
+  const tempArray = array.filter((el) => el.age >= 40);
+  return tempArray;
+};
 
+console.log(menOlderThan40(people));
+
+// Zadanie 13.
+const sortingAge = (array) => array.sort();
+
+console.log(sortingAge(people));
 // Zadanie 14.
 
 // Zadanie 15.
