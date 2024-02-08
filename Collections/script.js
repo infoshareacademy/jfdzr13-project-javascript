@@ -199,24 +199,94 @@ console.log(userCarModified(people));
 // Zadanie 12.
 
 const menOlderThan40 = (array) => {
-  const tempArray = array.filter((el) => el.age >= 40);
-  return tempArray;
+  const tempArray = array.filter((el) => el.age >= 40); //krok1 - redukowalem people do tylko co najmniej 40 lat przy pomocy filter
+  const tempAge = tempArray.map((man) => [man.age]).flat(); //krok 2 - tworze pomocnicza array z samym wiekiem
+  const tempName = tempArray.map((man) => [man.name]); //ktok 3 - tworze pomocniczy array z samymi imionami
+  const sumAge = sumNumbersInArray1(tempAge); //krok 4 - tworze sume z wieków przy pomocy jednej z funkcji z poprzedniego zadania(bazujacej na reduce)
+  return `The user is ${tempName[0]} and he is ${tempAge[0]} years old, Next user is ${tempName[0]} and he is ${tempAge[0]} years old, Together they have ${sumAge} years`; //tutaj jest po prostu string wynikowy ale Uwaga - przyjalem zalozenie, ze wiem ze nowa tablica ma 2 uzytkownikow - zgodnie z poleceniem. gdyby bylo ich wiecej, no to wtedy trzeba by iterowac po pomocnyczych array.length
 };
-
 console.log(menOlderThan40(people));
 
 // Zadanie 13.
-const sortingAge = (array) => array.sort();
+const compareAge = (a, b) => a.age - b.age; // tutaj tworze funkcje porownujaca ktorej potem uzyje do sortowania wieku, analogicznie do Zadania 4, ale dodaje .age zeby jasno okreslic co bede porowywac juz teraz
+const sortingAge = (array) => array.sort(compareAge); //tworze funkcje wykorzystujac compareAge i sort, czyli sortuje moj obiekt wedle wieku
+const newPeopleByAge = sortingAge(people); //zwracam nowa tablice zgodnie z poleceniem
+console.log(newPeopleByAge);
 
-console.log(sortingAge(people));
 // Zadanie 14.
+//tutaj sie troche meczylem, wiedzialem jak ma byc skonstruowana sama funkcja, ale ten new Date() nie wychodzil i dopiero GPT podpowiedzial mi linie 229
+const dayOfTheWeekYouWereBorn = (dateInput) => {
+  //dateInput czyli data uzytkownika jako argument funkcji
+  const days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ]; //definiuje dni tygodnia bo .getDay zwraca numer, nie stringa. Od niedzieli, bo array liczymy od 0
+  const date = new Date(dateInput); //zmienna daty, ktora pozwala mi potem uzyc getDay() jako number
+  const result = days[date.getDay()]; //zmienna pomocnicza result aby mocyc grawisu, w jej skladzie wybieram element po date z tablicy days
+  return `You were born on ${result}`; //string z polecenia do zadania
+};
+console.log(dayOfTheWeekYouWereBorn("2024-02-11"));
 
 // Zadanie 15.
+const text =
+  "JavaScript byl dla mnie skomplikowany a teraz JavaScript jest dla mnie znacznie prostszy. Viva Javascript";
+
+const countWordOccurrences = (string) => {
+  //zmienna funkcji to oczywiscie ciag znakow string
+  const stringSplitted = string.replace(/[.,:;=+-]/g, "").split(" "); //pomocniczy string, w ktorym najpierw z generatora regexow zastapilem replacem znaki interpunkcyjne, a potem rozbilem na pojedyncze zdania
+  for (let i = 0; i < stringSplitted.length; i++) {
+    const element = stringSplitted[i];
+    let count = element.split());
+  }
+  return stringSplitted;
+};
+console.log(countWordOccurrences(text));
+
+let theString = "Welcome toto W3Docs to";
+console.log(theString.split("to").length - 1); //to moze byc dobre
 
 // Zadanie 16.
 
 // Zadanie 17
+const studentsGrades = [
+  {
+    id: 1,
+    name: "Jacek",
+    grades: [5, 3, 4, 2, 5, 5],
+  },
+  {
+    id: 2,
+    name: "Ewa",
+    grades: [2, 3, 3, 3, 2, 5],
+  },
+  {
+    id: 3,
+    name: "Zygmunt",
+    grades: [],
+  },
+];
 
+const getStudentTopGrades = (array) => {
+  const gradesArray = array.map((student) => {
+    if (student.grades == "" && []) {
+      return 0;
+    } else {
+      return Math.max(...student.grades);
+    }
+  });
+  // tutaj gpt pomogl mi uzyc spreada w Math.max
+  // 1. tworzymy zmienna gradesArray ktora mapuje po array czyli po kazdym elemencie tablicy
+  // 2. najpierw warunek, jesli oceny sa puste lub brak ocen, to zwracamy 0, a jesli nie to wykonujemy operacje ponizej
+  // 3. w map mamy student, ktory dla kazdego rekordu uzywa math.max do znalezienia maksa ze student.grades)
+  // 4. uzycie mapa gwarantuje, ze przejedziemy po kazdym z rekordow, a ... zapewnia, ze mamy osobne listy, a nie tablice list, przez co mozemy uzyc Math.max
+  return gradesArray;
+};
+console.log(getStudentTopGrades(studentsGrades));
 //Homework:
 //zadania do domu do końca (7 pkt)
 // opis tego co robimy i jak
