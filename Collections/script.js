@@ -237,13 +237,20 @@ const text =
   "JavaScript byl dla mnie skomplikowany a teraz JavaScript jest dla mnie znacznie prostszy. Viva Javascript";
 
 const countWordOccurrences = (string) => {
-  //zmienna funkcji to oczywiscie ciag znakow string
-  const stringSplitted = string.replace(/[.,:;=+-]/g, "").split(" "); //pomocniczy string, w ktorym najpierw z generatora regexow zastapilem replacem znaki interpunkcyjne, a potem rozbilem na pojedyncze zdania
-  for (let i = 0; i < stringSplitted.length; i++) {
-    const element = stringSplitted[i];
-    let count = element.split());
-  }
-  return stringSplitted;
+  const words = string.replace(/[^\w\s]/g, "").split(/\s+/); // usuwam znaki i rozbijam, z generatora regexow
+  const wordCounter = {}; //obiekt pomocniczy
+  //tutaj zliczam ilosci slow, pomogl mi GPT.
+  words.forEach((word) => {
+    //dla kazdego slowa w arrayce iterujemy forEach
+    if (wordCounter[word]) {
+      //jezeli dane slowo wystepuje w arrayce, to funkcja idzie dalej i zwieksza licznik o 1
+      wordCounter[word] = wordCounter[word] + 1;
+    } else {
+      //a jesli nie pojawia sie wiecej, to znaczy ze jest tylko jedno takie slowo
+      wordCounter[word] = 1;
+    }
+  });
+  return wordCounter; //zwracamy obiekt licznik
 };
 console.log(countWordOccurrences(text));
 
@@ -251,6 +258,19 @@ let theString = "Welcome toto W3Docs to";
 console.log(theString.split("to").length - 1); //to moze byc dobre
 
 // Zadanie 16.
+const toCamelCase = (string) => {
+  const stringSplitted = string.split(/[_-]/); //najpierw tworze stringa rozbitego, jesli znajdzie - albo _
+  for (let i = 1; i < stringSplitted.length; i++) {
+    //iteruje po wszystkich slowach oprocz 1(no bo po co skoro logicznym jest, ze jesli ma byc wielkimi to bedzie wielkimi, i analogicznie malymi)
+    stringSplitted[i] =
+      stringSplitted[i].charAt(0).toUpperCase() + stringSplitted[i].slice(1); //zwracamy sume zawsze duzego pierwszego znaku i reszty
+  }
+  return stringSplitted.join(""); //laczymy calosc tak zeby byl camel case
+};
+console.log(toCamelCase("java_script"));
+console.log(toCamelCase("java-script"));
+console.log(toCamelCase("Java-Script"));
+console.log(toCamelCase("asp_Net_Core"));
 
 // Zadanie 17
 const studentsGrades = [
