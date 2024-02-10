@@ -256,14 +256,137 @@ console.log(filterByAge(people, 30));
 
 // Zadanie 11.
 
+people.forEach(function(user) {
+    let userDescription = `The user's name is ${user.name} and the user is ${user.age} years old. The user works as ${user.job} and drives ${user.car}`;
+
+//uzywamy funkcji forEach, zeby przejść przez kazdy element tabeli people i nazywamy sobie kazdy element tabeli jako 'user' i informujemy funkcje, ze ma przejsc przez kazdy taki element 'user' i wyswietlic jego dane zgodnie z opisem
+
+if(people.car === "Ford Mustang" || people.car === "BMW 3 Series") {
+    userDescription += " which is fun car.";
+}
+else {
+    userDescription += " which is boring car.";
+}
+//ustalamy sobie warunki, dla których ma się dodawać kwestia tego czy to fajny, czy nudny samochód 
+
+
+console.log(userDescription);
+//dajemy console loga wewnątrz funkcji, zeby miec dostep do elementow
+
+});
+
+
 // Zadanie 12.
+
+people.forEach(function(user) {
+//znowu uzywamy sobie funkcji forEach, aby przejsc przez wszystkie elementy tablicy 'people'
+if(user.age >= 40 && user.gender === "man"){
+    let olderMen = `The user is a ${user.gender} and he is ${user.age} years old.`;
+//stawiamy warunek- JEŚLI age i gender spełniają warunkui, to dopiero wtedy wyświetl zmienną olderMen
+    console.log(olderMen);
+}
+});
+
+function menAgeSum(people){ //nawiązujemy sobie do tabeli people
+    let sumAge = 0; //tworzymy zmienną, do której przypiszemy zsumowany wiek
+    people.filter(function(user){
+        // if(user.age >= 40 && user.gender === "man"){
+        //     return true;
+        // }
+        //     return false; LUB
+
+    return user.age >= 40 && user.gender === "man"
+    }).forEach(function(user){ //tutaj miałam duuzy problem; po odfiltrowaniu userow zgodnie z wiekiem i płcią bierzemy kazdego i dodajemy jego wiek do zmiennej, ktora poki co wynosi 0, na początku zrobiłam if(warunki), ale chat podpowiedział mi, ze wtedy musialabym zwrócić true/ false i dopiero wtedy jeśli true to sumAge += user.age, sama bym pewnie na to nie wpadła...
+        sumAge += user.age;
+
+    });
+
+    return sumAge; 
+    //zwracamy wynik z funkcji
+}
+
+console.log("Together they're", menAgeSum(people), "years old.");
 
 // Zadanie 13.
 
+function sortedAge(people) {
+
+let copyPeople = people.slice(); //w zadaniu jest napisane, aby zwrócić nową tablicę, nie modyfikować starą, więc skopiowałam oryginalną (to dodałam na końcu w sumie)
+
+copyPeople.sort(function (a,b){
+    return a.age - b.age //tego trochę nie kminię, szczerze, ale w skrócie załapałam, ze jak bedzie a - b i wynik będzie ujemny, to znaczy, ze a jest mniejsze i będzie przed b, jak bym dała b - a, to na odwrót (ale trzeba patrzeć na liczy, bo jeśli b będzie mniejsze od a i zrobimy a - b, to b będzie mniejsze czyli stanie przed a jeśli dobrze rozumiem)
+});
+
+return copyPeople;
+//zwracamy sobie działanie z funkcji ustalające kolejność
+}
+
+console.log(sortedAge(people));
+//wywołujemy funkcje w console.logu przedatawiającą userów po kolei zgodnie z wiekiem rosnąco
+
+
 // Zadanie 14.
+
+let birthday = new Date("1999-06-09"); //newDate tworzymy sobie zmienną reprezentującą naszą datę urodzin
+let day = birthday.toLocaleDateString("en", {weekday: "long"}); //musiałam wygooglować i poszukać więcej o obiekcie Date
+console.log("I was born on", day += ".");
 
 // Zadanie 15.
 
+//to zadanie jest dla mnie zbyt skomplikowane i mimo ze CHAT GPT wygenerował mi rozwiązanie i komentarze, to jest to na tyle trudne, ze nie rozumiem nawet wyjaśnień, więc myślę, ze to zadanie odpuszczę w pracy domowej- kompletnie nie rozumiem.
+
 // Zadanie 16.
+//okej wydawało się łatwe, totalnie level hard jak dla mnie- nie wiedziałam za bardzo od czego zacząć, więc zaczęłam coś skrobać tylko dla let a, zeby jakkolwiek to pojąć, a dopiero później edytowałam całą funkcję 
+
+let a = "java_script";
+let b = "java-script";
+let c = "Java-Script";
+let d = "asp_Net_Core";
+
+function toCamelCase (input) {
+    let parts = input.split(/-|_/); //ok tutaj definiujemy sobie rozdzielanie stringu za pomocą - lub _
+
+    let camelCaseParts = parts.map(function(part, index){
+    if(index === 0) {
+        return part;
+    } else {
+        return part[0].toUpperCase() + part.slice(1);
+    }}) //tutaj warunkujemy, ze jeśli indeks części stringu wynosi 0 (np. w java-script mamy dwie części, java i script, więc mowa tutaj o części 'java'), to zwrócone ma zostać oryginalne słowo, a w innych przypadkach (czyli np. 'script') mamy zmienić pierwszę literę stringu danej części na wielką i zwrócić resztę tej części bez pierwszej litery, która była mała (sama bym na to nie wpadła, ale zwrocenie part z podmieniona tylko wielką literą jest jeszcz gorsze)
+
+    let camelCase = camelCaseParts.join(''); //definiujemy sobie finalną zmienną, no bo trzeba to wszystko ze sobą połączyć
+    return camelCase;
+};
+
+
+console.log(toCamelCase(a));
+console.log(toCamelCase(b));
+console.log(toCamelCase(c));
+console.log(toCamelCase(d));
+
 
 // Zadanie 17.
+
+let studentsGrades =([
+	{
+		id: 1,
+		name: "Jacek",
+		grades: [5, 3, 4, 2, 5, 5],
+	},
+	{
+		id: 2,
+		name: "Ewa",
+		grades: [2, 3, 3, 3, 2, 5],
+	},
+	{
+		id: 3,
+		name: "Zygmunt",
+		grades: [2, 2, 4, 4, 3, 3],
+	},
+]);
+
+let topGrades = studentsGrades.map(function(student){ //ok zadeklarowałam sobie nową zmienną topGrades, która da mi nową tablicę po uzyciu funkcji map, która przechodzi przez wszystkie elementy tablicy i zwraca nową (nazwałam kazdy element tablicy 'student')
+    return student.grades.reduce(function(currentMax, gradeIndex){ 
+        return Math.max(currentMax, gradeIndex);}, -Infinity); //z tym mam problem (zadna nowość XD), bo nie mogę zapamiętać, ze ta pierwsza wartość, to aktualna wartość, jaką mamy na danym indeksie, która jest równiez początkową wartością (tutaj -infinity) i później zmienia się zgodnie z indeksem i jeśli jest większa (w tym przypadku, bo mamy math.max), to jest zastępowana lizbą z kolejnego indeksu, niby ma to sens jak się o tym czyta, ale sama bym pewnie na to nie wpadła
+    });
+
+    console.log(topGrades);
