@@ -1,0 +1,12 @@
+.header {
+    font-size: 24px;
+    color: #345345;
+    text-align: center;
+  }
+  
+  .listItem {
+    text-transform: capitalize;
+    font-size: 32px;
+    color: #555666;
+  }
+  
