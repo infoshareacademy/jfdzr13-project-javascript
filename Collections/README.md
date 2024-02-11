@@ -10,9 +10,9 @@ Wybierz element `**` z zagnieżdżonej tablicy i zastąp go `"x"`
 
 ```javascript
 const tickTackToe = [
-	["x", "o", "x"],
-	["x", "x", "o"],
-	["**", "o", "x"],
+  ["x", "o", "x"],
+  ["x", "x", "o"],
+  ["**", "o", "x"],
 ];
 ```
 
@@ -89,14 +89,14 @@ stringLength(["hello", "world", "dog", "sophisticated"]); // [5, 5, 3, 13];
 
 ### Zadanie 8.
 
--  wyświetl tylko elementy większe lub równe 20: `Elementy większe lub równe 20: 50, 20, 21, 100, 20, 44`
--  wyświetl sumę tylko ujemnych elementów tablicy: `Suma elementów ujemnych: -134`
--  wyświetl sumę elementów na indeksach parzystych: `Suma elementów parzystych: 193`
+- wyświetl tylko elementy większe lub równe 20: `Elementy większe lub równe 20: 50, 20, 21, 100, 20, 44`
+- wyświetl sumę tylko ujemnych elementów tablicy: `Suma elementów ujemnych: -134`
+- wyświetl sumę elementów na indeksach parzystych: `Suma elementów parzystych: 193`
 
 ```javascript
 const numbers = [
-	11, -10, 50, 5, -8, 9, 20, 21, -4, 11, -5, -12, 100, 20, 14, 8, 19, 44, -21,
-	-53, 17, -21,
+  11, -10, 50, 5, -8, 9, 20, 21, -4, 11, -5, -12, 100, 20, 14, 8, 19, 44, -21,
+  -53, 17, -21,
 ];
 ```
 
@@ -134,7 +134,7 @@ Napisz funkcję, która wyświetli każdego z userów w konwencji:
 
 `The user's name is name and the user is age years old. The user works as job and drives car`
 
--  Zmodyfikuj funkcję tak, by w zależności od property `car` obiektów będących elementami tablicy `people`, zwracana była dodatkowo informacja:
+- Zmodyfikuj funkcję tak, by w zależności od property `car` obiektów będących elementami tablicy `people`, zwracana była dodatkowo informacja:
 
 `The user's name is name and the user is age years old. The user works as job and drives car` + "which is fun car/ boring car"
 
@@ -174,7 +174,7 @@ Przykład:
 
 ```javascript
 countWordOccurrences(
-	"JavaScript byl dla mnie skomplikowany a teraz JavaScript jest dla mnie znacznie prostszy. Viva Javascript"
+  "JavaScript byl dla mnie skomplikowany a teraz JavaScript jest dla mnie znacznie prostszy. Viva Javascript"
 ); // => { javascript: 3, byl: 1, dla: 2, mnie: 2, skomplikowany: 1, a: 1, teraz: 1, jest: 1, znacznie: 1, prostszy: 1, viva: 1 }
 ```
 
@@ -201,20 +201,20 @@ Przykład:
 
 ```javascript
 getStudentTopGrades([
-	{
-		id: 1,
-		name: "Jacek",
-		grades: [5, 3, 4, 2, 5, 5],
-	},
-	{
-		id: 2,
-		name: "Ewa",
-		grades: [2, 3, 3, 3, 2, 5],
-	},
-	{
-		id: 3,
-		name: "Zygmunt",
-		grades: [2, 2, 4, 4, 3, 3],
-	},
+  {
+    id: 1,
+    name: "Jacek",
+    grades: [5, 3, 4, 2, 5, 5],
+  },
+  {
+    id: 2,
+    name: "Ewa",
+    grades: [2, 3, 3, 3, 2, 5],
+  },
+  {
+    id: 3,
+    name: "Zygmunt",
+    grades: [2, 2, 4, 4, 3, 3],
+  },
 ]); // => [5, 5, 4]
 ```
