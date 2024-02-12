@@ -290,27 +290,28 @@
 
 import people from "./data.js";
 
-// function showUsers(array){
-//     array.forEach((item) => {
-//         console.log(`The user's name is ${item.name} a0nd the user is ${item.age} years old. The user works as ${item.job} and drives ${item.car} which is ${item.car.includes('BMW') ? 'boring' : 'fun' } car`);
-//     });
-// }
+function showUsers(array){ // chcę wyświetlić użytkowników, dlatego używam forEach żeby przejść po tablicy 
+    array.forEach((item) => { // biorę każdy element tablicy żeby wyświetlić wg tekstu poniżej
+        console.log(`The user's name is ${item.name} a0nd the user is ${item.age} years old. The user works as ${item.job} and drives ${item.car} which is ${item.car.includes('BMW') ? 'boring' : 'fun' } car`); // sprawdzam warunek na tablicy
+    });
+}
 
-// showUsers(people);
+showUsers(people);
+
 // Zadanie 12.
 
-function showUsers(array) {
-    const filteredArray = array.filter((item) => {
-        return item.age > 40 && item.gender === 'man';
+function showUsers(array) { // chcę wyświetlić użytkowników 'przefiltrowanymi' danymi
+    const filteredArray = array.filter((item) => { 
+        return item.age > 40 && item.gender === 'man'; // warunkuję co ma być w tablicy
     });
 
     
-    filteredArray.forEach((item) => {
+    filteredArray.forEach((item) => { // z przefiltrowanej tablicy wyświetlam imiona i wiek 
         console.log(`The user is ${item.name} and he is ${item.age} years old`);
     })
 
     const usersAge = filteredArray.reduce((result, item) => {
-        return result + item.age;
+        return result + item.age; // sumuję wiek mężczyzn 
 
     }, 0)
 
@@ -321,7 +322,10 @@ showUsers(people);
 
 // Zadanie 13.
 
-
+function sortedUsers(array) { // deklaruję funkcję z tablicą jako parametr
+    let newArray = array.sort((a, b) => a.age - b.age); //  zwracam nową tablicę i wykorzystuję metodę sort do posortowania według wieku 
+    return newArray; // zwracam nową tablicę
+}
 
 // Zadanie 14.
 
