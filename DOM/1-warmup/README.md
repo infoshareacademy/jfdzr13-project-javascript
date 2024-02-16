@@ -35,8 +35,8 @@ Przenieście skrypt na sam dół i sprawdźcie, czy tym razem console.log(header
 
 ---
 
-4. Dodajmy do HTMLa listę numerowaną z 4 elementami. Wykorzystajmy do tego JS. Aby dodać kod musimy znaleźć element 'bazowy' w którego środek 'wciśniemy' listę wraz z jej elementami - takim elementem bazowym może być 'body'.
-   Stwórz tablicę 'listItems' składającą się z 4 elementów - kolejnych liter alfabetu zaczynająć od 'a'. Następnie korzystająć z funkcji 'createElement' stwórz listę 'ol'. Wykorzystując funkcję 'forEach' dodaj wszystkie cztery elementy z tablicy do listy 'ol' tworząc za każdym razem element 'li' i umieszczając w nim treść odpowiadającą zawartości tego elementu (czyli dla elementu o indeksie 0 będzie to 'a', potem 'b' itd...). Do dodania do listy elementów 'li' wykorzystaj funkcję 'append'. Pamiętaj o 'wciśnięciu' gotowej listy do drzewa DOM.
+4. Dodajmy do HTMLa listę numerowaną z 4 elementami. Wrtości tego elementu (czyli dla elementu o indeksie 0 będzie to 'a', potem 'b' itd...). Do dodania do listy elementów 'li' wykorzystaj funkcję 'append'. Pamiętaj o 'wciśnięciu' gotowej listy do drykorzystajmy do tego JS. Aby dodać kod musimy znaleźć element 'bazowy' w którego środek 'wciśniemy' listę wraz z jej elementami - takim elementem bazowym może być 'body'.
+   Stwórz tablicę 'listItems' składającą się z 4 elementów - kolejnych liter alfabetu zaczynająć od 'a'. Następnie korzystająć z funkcji 'createElement' stwórz listę 'ol'. Wykorzystując funkcję 'forEach' dodaj wszystkie cztery elementy z tablicy do listy 'ol' tworząc za każdym razem element 'li' i umieszczając w nim treść odpowiadającą zawazewa DOM.
 
 ---
 
