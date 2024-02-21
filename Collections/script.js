@@ -1,269 +1,361 @@
 import people from "./data.js";
 
 // Zadanie 1.
-const tickTackToe = [
-	["x", "o", "x"], // 0
-	["x", "x", "o"], // 1
-	["**", "o", "x"], // 2
-];
-
-tickTackToe[2][0] = "x";
-
-console.log(tickTackToe);
-
 // napisać funkcję, która zwróci kopię tickTackToe z podmienionymi ** na x;
 
+// const tickTackToe = [
+//   ["x", "o", "x"], // 0
+//   ["x", "x", "o"], // 1
+//   ["**", "o", "x"], // 2
+// ];
+
+// for (let elements in tickTackToe) {
+//   for (let ele in tickTackToe[elements]) {
+//     if (tickTackToe[elements][ele] == "**") {
+//       tickTackToe[elements][ele] = "x";
+//       console.log("found", ele);
+//     }
+//   }
+// }
+// console.log(tickTackToe);
+
 // Zadanie 2.
-function simpleSum(arr) {
-    let sum = 0; // temp var
+// Napisz funkcję, która zsumuje wszystkie liczby w tablicy.
 
-    arr.forEach((elem) => sum+=elem); // on every iteration add to sum
+// function sumNumbersInArray(arr) {
+//   let sum = 0;
+//   for (let num of arr) {
+//     sum += num;
+//   }
+//   return sum;
+// }
 
-    return sum;
-}
-
-function sumByReduce(arr) {
-    return arr.reduce((acc, curr) => acc + curr, 0)
-}
-
-function sumWithLoop(arr) {
-    let sum = 0; // temp var
-    let i = 0; // initial index
-
-    while(i < arr.length) {
-        console.log("current sum: ", sum);
-        sum += arr[i]
-        i++;
-    }
-
-    return sum;
-}
-
-
-console.log(simpleSum([2, 7, 4, 11, -1])); // 23
-console.log(sumByReduce([0, 8, 3, 14, 1])); // 26
-console.log(sumWithLoop([2, -7, 140, 10, -1])); // 144
+// console.log(sumNumbersInArray([2, 7, 4, 11, -1])); // 23
+// console.log(sumNumbersInArray([0, 8, 3, 14, 1])); // 26
+// console.log(sumNumbersInArray([2, -7, 140, 10, -1])); // 144
 
 // Zadanie 3.
-function sortArr(order = "desc", arr) {
-    if (order === "asc") return arr.sort((a,b) => a - b);
-    return arr.sort((a,b) => b - a);
-}
+//Napisz funkcję, która posortuje liczby w tablicy rosnąco lub malejąco w zależności od zadanego parametru.
 
+// function sortArr(c, arr) {
+//   if (c == "asc") {
+//     arr.sort((a, b) => a - b);
+//   } else {
+//     arr.sort((a, b) => b - a);
+//   }
 
-console.log(sortArr("asc", [2, 7, 4, 11, -1]));
-console.log(sortArr("desc", [2, 7, 4, 11, -1]));
-console.log(sortArr("asc", [0, 8, 3, 14, 1]));
-console.log(sortArr("desc", [0, 8, 3, 14, 1]));
-console.log(sortArr("asc", [2, -7, 140, 10, -1]));
-console.log(sortArr("desc", [2, -7, 140, 10, -1]));
+//   return arr;
+// }
+
+// console.log(sortArr("asc", [2, 7, 4, 11, -1]));
+// console.log(sortArr("desc", [2, 7, 4, 11, -1]));
+// console.log(sortArr("asc", [0, 8, 3, 14, 1]));
+// console.log(sortArr("desc", [0, 8, 3, 14, 1]));
+// console.log(sortArr("asc", [2, -7, 140, 10, -1]));
+// console.log(sortArr("desc", [2, -7, 140, 10, -1]));
 
 // Zadanie 4.
-function biggestInArray(arr) {
-    return Math.max(...arr);
-}
+//Napisz funkcję, która zwróci największą liczbę z tablicy
 
-function getBiggest(arr) {
-    return arr.sort((a,b) => b - a)[0];
-}
+// function biggestInArray(arr) {
+//   let max = 0;
+//   for (let ele of arr) {
+//     if (max < ele) {
+//       max = ele;
+//     }
+//   }
+//   return max;
+// }
 
-function returnBiggest(arr) {
-    return arr.sort((a,b) => a-b)[arr.length - 1]
-}
-
-console.log(biggestInArray([2, 7, 4, 11, -1]));
-console.log(getBiggest([0, 8, 3, 14, 1]));
-console.log(returnBiggest([2, -7, 140, 10, -1]));
+// console.log(biggestInArray([2, 7, 4, 11, -1]));
+// console.log(biggestInArray([0, 8, 3, 14, 1]));
+// console.log(biggestInArray([2, -7, 140, 10, -1]));
 
 // Zadanie 5.
-function reverseArray(arr) {
-    return arr.reverse();
-}
+//Napisz funkcję, która pobiera tablicę jako argument i zwraca tablicę z elementami posortowanymi w odwrotnej kolejności.
 
-function returnReversedCopy(arr){
-    let newArr = [];
+// function reverseArray(arr) {
+//   return arr.reverse();
+// }
 
-    for (let i = arr.length - 1; i >= 0; i--) {
-        newArr.push(arr[i]);
-    }
-
-    return newArr;
-}
-
-function returnReversed(arr) {
-    let newArr = [];
-
-    arr.forEach((elem) => newArr.unshift(elem));
-
-    return newArr;
-}
-
-console.log(reverseArray([2, 7, 4, 11, -1]));
-console.log(returnReversedCopy([0, 8, 3, 14, 1]));
-console.log(returnReversed([2, -7, 140, 10, -1]));
+// console.log(reverseArray([2, 7, 4, 11, -1]));
+// console.log(reverseArray([0, 8, 3, 14, 1]));
+// console.log(reverseArray([2, -7, 140, 10, -1]));
 
 // Zadanie 6.
-function areElemsTruthy(topIndex, arr) {
-    let res = [];
-    const portionOfArrayToConsider = arr.slice(0, topIndex); // [1, NaN, undefined, 0]
+//Napisz funkcję, która sprawdzi czy elementy określonego wycinka tablicy (od indeksu 0 do wskazanego elementu tablicy) są `truthy` czy `falsy`.
 
-    portionOfArrayToConsider.forEach((elem) => res.push(Boolean(elem)));
+// function areElemsTruthy(num, arr) {
+//   const result = [];
+//   for (let ele in arr) {
+//     if (ele == num) {
+//       break;
+//     } else if (arr[ele]) {
+//       result.push(true);
+//     } else {
+//       result.push(false);
+//     }
+//   }
+//   return result;
+// }
 
-    return res;
-}
-
-function boolifyArrPart(topBorder, arr) {
-    const portionOfArrayToConsider = arr.slice(0, topBorder); // [1, NaN, undefined, 0]
-
-    return portionOfArrayToConsider.map((elem) => !!elem); // Boolean(elem);
-}
-
-function returnBoolified(topIndex, arr) {
-    let partialArr = [];
-
-    arr.forEach((elem, i) => {
-        if (i < topIndex) {
-            partialArr.push(elem);
-        }
-    })
-
-    return partialArr.map((elem) => !!elem);
-}
-
-console.log(areElemsTruthy(4, [1, NaN, undefined, 0, true])); // [true, false, false, false]
-console.log(boolifyArrPart(4, [1, NaN, undefined, 0, true])); // [true, false, false, false]
-console.log(returnBoolified(4, [1, NaN, undefined, 0, true])); // [true, false, false, false]
+// console.log(areElemsTruthy(4, [1, NaN, undefined, 0, true])); // [true, false, false, false]
 
 // Zadanie 7.
-function stringLength(arr) {
-    for (let i = 0; i < arr.length; i++) {
-        arr[i] = arr[i].length;
-    }
+//Napisz funkcję `stringLength()`, która jako parametr przyjmie tablicę ciągów znaków i zwróci tablicę ich długości.
 
-    return arr;
-}
+// function stringLength(arr) {
+//   const results = [];
+//   for (let element in arr) {
+//     results[element] = arr[element].length;
+//   }
+//   return results;
+// }
 
-function mapStringsArrToLengths(arr) {
-    return arr.map((elem) => elem.length); // original -> modified copy
-}
+// function mapStringsArrToLengths(arr) {
+//   return arr.map((num) => num.length);
+// }
 
-
-console.log(stringLength(["hello", "world", "dog", "sophisticated"])); // [5, 5, 3, 13];
-console.log(mapStringsArrToLengths(["hello", "world", "dog", "sophisticated"])); // [5, 5, 3, 13];
+// console.log(stringLength(["hello", "world", "dog", "sophisticated"])); // [5, 5, 3, 13];
+// console.log(
+//   mapStringsArrToLengths(["hello", "world", "dog", "sophizzzzsticated"])
+// );
 
 // Zadanie 8.
-const numbers = [
-	11, -10, 50, 5, -8, 9, 20, 21, -4, 11, -5, -12, 100, 20, 14, 8, 19, 44, -21,
-	-53, 17, -21,
-];
+// -  wyświetl tylko elementy większe lub równe 20: `Elementy większe lub równe 20: 50, 20, 21, 100, 20, 44`
+// -  wyświetl sumę tylko ujemnych elementów tablicy: `Suma elementów ujemnych: -134`
+// -  wyświetl sumę elementów na indeksach parzystych: `Suma elementów parzystych: 193`
 
-function printBiggerOrEqual(arr, num) {
-    let newArr = [];
+// function filter(arr) {
+//   const biggerThan20 = arr.filter((num) => num >= 20);
+//   console.log("Bigger or equal to 20", biggerThan20);
+//   const negative = arr.filter((num) => num < 0);
+//   let sumNegative = 0;
+//   for (let ele of negative) {
+//     sumNegative += ele;
+//   }
+//   console.log("Sum of negative ", sumNegative);
 
-    arr.forEach((elem) => {
-        if (elem >= num) {
-            newArr.push(elem);
-        }
-    })
+//   let sumIndexPositive = 0;
 
-    const elementsToDisplay = newArr.sort((a, b) => a - b).join();
+//   for (let i in arr) {
+//     if (i % 2 == 0) {
+//       sumIndexPositive += arr[i];
+//     }
+//   }
+//   console.log("Sum of index positive ", sumIndexPositive);
+// }
 
-    return `Elementy większe lub równe ${num}: ${elementsToDisplay}`
-}
+// const numbers = [
+//   11, -10, 50, 5, -8, 9, 20, 21, -4, 11, -5, -12, 100, 20, 14, 8, 19, 44, -21,
+//   -53, 17, -21,
+// ];
 
-function sumOfNegatives(arr) {
-    // let newArr = [];
-
-    // arr.forEach((elem) => {
-    //     if (elem < 0) {
-    //         newArr.push(elem);
-    //     }
-    // })
-
-    const newArr = arr.filter((elem) => elem < 0);
-
-    const sum = newArr.reduce((acc, curr) => acc + curr ,0);
-
-    return `Suma elementów ujemnych: ${sum}`;
-}
-
-function sumOfEvens(arr) {
-    const sum = arr.reduce((acc, curr, i) => {
-        if (i % 2 !== 0) return acc;
-        return acc + curr;
-    }, 0);
-
-    return `Suma elementów parzystych: ${sum}`;
-}
-
-console.log(printBiggerOrEqual(numbers, 20));
-console.log(sumOfNegatives(numbers));
-console.log(sumOfEvens(numbers));
-
+// filter(numbers);
 // Zadanie 9.
-function flatArr(arr) {
-    let newArr = []; // definiujemy pustą tablicę, do której zapiszemy nowe elementy spełniające kryteria określone ponizej
-    
-    arr.forEach((elem) => { // wykonujemy pętlę na elementach oryginalnej arrayki
-        if (Array.isArray(elem)) { // jezeli element jest arrayką to argumenty tego elementu dodajemy do newArray pojedynczo
-            newArr.push(...elem);
-        } else { // jezeli elem nie jest arrayką, to dodajemy go do newArr takim jaki jest
-            newArr.push(elem);
-        }
-    });
+//Napisz funkcję flatArray() która przyjmuje tablicę tablic i zwraca je połączone w jedną.
 
-    return newArr;
-}
+// function flatArray(arr) {
+//   return arr.flat();
+// }
 
-console.log(
-	flatArr([
-		["a", "b"],
-		[1, 2],
-        2,
-        {
-            "tablica": [1,2,3],
-            "obj": {
-                "tablica": [1,23]
-            }
-        }
-	])
-);
-console.log(
-	flatArr([
-		["red", "blue", "kolejny argument"],
-		["green", "red", "yellow"],
-		["black", "blue"],
-		["pink", "black", "white"],
-	])
-);
+// console.log(
+//   flatArray([
+//     ["a", "b"],
+//     [1, 2],
+//   ])
+// ); // ['a', 'b', 1, 2]
+// console.log(
+//   flatArray([
+//     ["red", "blue"],
+//     ["green", "red", "yellow"],
+//     ["black", "blue"],
+//     ["pink", "black", "white"],
+//   ])
+// );
 
 // Zadanie 10.
-function filterByAge(arr, limitAge) {
-    return arr.filter((elem) => elem.age > limitAge);
-}
+// Napisz funkcję, która zwróci tablicę obiektów, spełniających kryterium: `age < 30`
+// function ageBelowe30(people) {
+//   const arr = [];
+//   for (let person of people) {
+//     if (person.age < 30) {
+//       arr.push(person);
+//     }
+//   }
+//   return arr;
+// }
 
-console.log(filterByAge(people, 30));
-
-// HOMEWORK: Wykonaj ponizsze zadania na przynajmniej 1 sposób.
-// Kazdy z wykonanych sposobów wytłumaczyć przy pomocy komentarzy (przykład powyzej w zadaniu 9);
-// Wstępny termin oddania pracy: 9.02 do północy
-// W przypadku wypełnionych ankiet termin przedłuzamy do 11.01 do północy
-// Sprawdzane będą wyłącznie prace domowe oddane w formie pull requesta
-// Pull request mozna wykonać na repozytorium https://github.com/infoshareacademy/jfdzr13-project-javascript lub swoim repozytorium w organizacji infoShare
-
-// Max punktów do zdobycia: 7
-
+// console.log(ageBelowe30(people));
 
 // Zadanie 11.
+// Napisz funkcję, która wyświetli każdego z userów w konwencji:
+
+// function aboutUser(arr) {
+//   for (let person of arr) {
+//     let str = "";
+//     if (person.car.includes("BMW") || person.car.includes("Ford")) {
+//       str = " which is fun car.";
+//     } else {
+//       str = " which is boring car";
+//     }
+//     console.log(
+//       `The user's name is ${person.name} and the user is ${
+//         person.age
+//       } years old. The user works as ${person.job} and drives ${
+//         person.car + str
+//       }`
+//     );
+//   }
+// }
+
+// aboutUser(people);
 
 // Zadanie 12.
+// Napisz funkcję, która zwróci tylko osoby mające conajmniej 40 lat i będące mężczyznami w konwencji `The user is X and he is Y years old`, i na koniec wyświetl sumę ich lat.
+
+// function onlyMenOver40(arr) {
+//   let ageSum = 0;
+//   let first = true;
+//   for (let person of arr) {
+//     if (person.age >= 40 && person.gender == "man") {
+//       if (first) {
+//         console.log(
+//           `First user is ${person.name} and he is ${person.age} years old`
+//         );
+//         ageSum = ageSum + person.age;
+//         first = false;
+//       } else {
+//         console.log(
+//           `Next user is ${person.name} and he is ${person.age} years old`
+//         );
+//         ageSum = ageSum + person.age;
+//       }
+//     }
+//   }
+//   console.log(`Together they have ${ageSum} years`);
+// }
+// console.log(onlyMenOver40(people));
 
 // Zadanie 13.
+// Napisz funkcję, która zwróci nową tablicę z posortowanymi od najmłodszego do najstarszego użytkownikami.
+
+// function sortByAge(arr) {
+//   const sortedData = arr.sort((a, b) => a.age - b.age);
+//   return sortedData;
+// }
+
+// console.log(sortByAge(people));
 
 // Zadanie 14.
 
+// const dayOfTheWeekYouWereBorn = (date) => {
+//   const birthDate = new Date(date);
+//   const day = birthDate.getDay();
+//   const daysOfTheWeek = [
+//     "Sunday",
+//     "Monday",
+//     "Tuesday",
+//     "Wednesday",
+//     "Thursday",
+//     "Friday",
+//     "Saturday",
+//   ];
+//   const ans = "You were born on " + daysOfTheWeek[day];
+//   return ans;
+// };
+
+// console.log(dayOfTheWeekYouWereBorn("1998-08-30"));
+
 // Zadanie 15.
+// Napisz funkcję countWordOccurrences, która przyjmie ciąg znaków i zwróci obiekt, który będzie reprezentował ilość wystąpień każdego słowa w przekazanym stringu.
+
+// function countWordOccurrences(text) {
+//   const fixText = text.toLowerCase().replace(".", "").replace(",", "");
+//   const words = fixText.split(" ");
+//   const wordCounter = {};
+
+//   words.forEach((word) => {
+//     if (word in wordCounter) {
+//       wordCounter[word] = wordCounter[word] + 1;
+//     } else {
+//       wordCounter[word] = 1;
+//     }
+//   });
+
+//   return wordCounter;
+// }
+
+// const wordCounts = countWordOccurrences(
+//   "JavaScript byl dla mnie skomplikowany, a teraz JavaScript jest dla mnie znacznie prostszy. Viva Javascript"
+// );
+// console.log(wordCounts);
 
 // Zadanie 16.
+// Zaimplementuj funkcję `toCamelCase` która przyjmie ciąg znaków, gdzie każde słowo będą oddzielone od kolejnego albo myślnikiem `(-)` albo znakiem podkreślenia `(_)`. Funkcja `toCamelCase` powinna konwertować otrzymany w parametrze ciag znaków i modyfikować go tak, aby był napisany camelCase.
+
+//Dodatkowo zwracany ciąg znaków powinien być pisany wielkimi literami tylko wtedy, gdy oryginalne słowo było pisane wielkimi literami.
+
+// function toCamelCase(str) {
+//   let result = "";
+//   for (let i = 0; i < str.length; i++) {
+//     let char = str[i];
+//     if (char == "-" || char == "_") {
+//       result += str[i + 1].toUpperCase();
+//       i++;
+//     } else {
+//       result += char;
+//     }
+//   }
+//   return result;
+// }
+
+// console.log(toCamelCase("Java_script")); // => javaScript
+// console.log(toCamelCase("java-script")); // => javaScript
+// console.log(toCamelCase("Java-Script")); // => JavaScript
+// console.log(toCamelCase("asp_Net_Core")); // => aspNetCore
 
 // Zadanie 17.
+// Utwórz funkcję `getStudentTopGrades`, która pobiera tablicę obiektów, gdzie każdy obiekt reprezentuje ucznia i jego oceny. Funkcja powinna zwrócić tablicę ich najwyższych ocen - każdy element tablicy powinien reprezentować najwyższą uzyskaną ocenę cząstkową danego studenta. Jeśli uczeń nie ma ocen, to przyjmijmy, że jego najwyższa ocena jest równa 0.
+
+// function getStudentTopGrades(students) {
+//   let topGrade;
+//   const topGradesArr = [];
+
+//   students.forEach((student) => {
+//     topGrade = 0;
+//     student.grades.forEach((grade) => {
+//       if (grade > topGrade) {
+//         topGrade = grade;
+//       }
+//     });
+//     topGradesArr.push(topGrade);
+//   });
+
+//   return topGradesArr;
+// }
+
+// const topGrades = getStudentTopGrades([
+//   {
+//     id: 1,
+//     name: "Jacek",
+//     grades: [5, 3, 4, 2, 5, 5],
+//   },
+//   {
+//     id: 2,
+//     name: "Ewa",
+//     grades: [2, 3, 3, 3, 2, 5],
+//   },
+//   {
+//     id: 3,
+//     name: "Zygmunt",
+//     grades: [2, 2, 4, 4, 3, 3],
+//   },
+//   {
+//     id: 4,
+//     name: "Ola",
+//     grades: [],
+//   },
+// ]);
+
+// console.log(topGrades); // => [5, 5, 4]

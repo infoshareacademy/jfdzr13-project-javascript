@@ -1,4 +1,8 @@
 // Zadanie 1.
+let userName = "Asia";
+let age = 25;
+let city = "Gdansk";
+console.log("Our user's name is ${userName}");
 
 // Zadanie 2.
 
