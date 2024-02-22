@@ -4,3 +4,9 @@
 [submodule "jfdzr13-project-javascript-main/DOM/1-warmup/Git/existingProject"]
 	path = jfdzr13-project-javascript-main/DOM/1-warmup/Git/existingProject
 	url = https://github.com/infoshareacademy/jfdzr13-project-javascript.git
+[submodule "jfdzr13-project-javascript-main/DOM/1-warmup/Git/gajewskaklaudia"]
+	path = jfdzr13-project-javascript-main/DOM/1-warmup/Git/gajewskaklaudia
+	url = https://github.com/infoshareacademy/jfdzr13-project-javascript.git
+[submodule "jfdzr13-project-javascript-main/DOM/1-warmup/Git/1-warmup"]
+	path = jfdzr13-project-javascript-main/DOM/1-warmup/Git/1-warmup
+	url = https://github.com/infoshareacademy/jfdzr13-project-javascript.git
