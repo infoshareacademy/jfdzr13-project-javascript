@@ -1,78 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" type="text/css" href="./style.css" />
-    <title>DevJobs Board</title>
-  </head>
-  <body>
-    <!-- Background SVG -->
-    <div class="backSVG__container"></div>
-    <!-- Top Navigation -->
-    <header>
-      <!-- DevJobs Logo -->
-      <a href="index.html">
-        <img src="./assets/desktop/logo.svg" alt="devjobs logo" />
-      </a>
-      <!-- Toggle -->
-      <div class="toggle">
-        <img
-          class="toggle__icon--left"
-          src="./assets/desktop/icon-sun.svg"
-          alt="light mode icon" />
-        <button class="toggle__button"></button>
-        <img
-          class="toggle__icon--right"
-          src="./assets/desktop/icon-moon.svg"
-          alt="dark mode icon" />
-      </div>
-    </header>
-    <main>
-      <!-- Search bar -->
-      <form class="search-bar__container">
-        <section class="search-bar">
-          <label class="input__label" for="filterByInfos">
-            <img src="./assets/desktop/icon-search.svg" />
-            <input
-              placeholder="Filter by job title..."
-              class="input__field"
-              id="search"
-              type="text" />
-          </label>
-          <button
-            class="button button--primary"
-            id="allJobs"
-            style="width: 14rem">
-            All jobs
-          </button>
-        </section>
-      </form>
-      <!-- Number of jobs listed -->
-      <h1 class="jobs-listed"><span>0</span> Jobs Listed</h1>
-      <!-- All jobs - grid -->
-      <section class="jobs__grid">
-        <!-- Single job card -->
-        <article class="job__card">
-          <div
-            style="background-color: hsl(36, 87%, 49%)"
-            class="company__logo company__logo--small">
-            <strong>Scoot</strong>
-          </div>
-          <div class="job__infos">
-            <p>5h ago</p>
-            <span class="job__infos__divider"></span>
-            <p>Full Time</p>
-          </div>
-          <a href="">
-            <h2 class="job__card__position">Senior Software Engineer</h2>
-          </a>
-          <p>Scoot</p>
-          <p class="job__card__location">United Kingdom</p>
-        </article>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" type="text/css" href="./style.css" />
+  <title>DevJobs Board</title>
+</head>
+
+<body>
+  <!-- Background SVG -->
+  <div class="backSVG__container"></div>
+  <!-- Top Navigation -->
+  <header>
+    <!-- DevJobs Logo -->
+    <a href="index.html">
+      <img src="./assets/desktop/logo.svg" alt="devjobs logo" />
+    </a>
+    <!-- Toggle -->
+    <div class="toggle">
+      <img class="toggle__icon--left" src="./assets/desktop/icon-sun.svg" alt="light mode icon" />
+      <button class="toggle__button "></button>
+      <img class="toggle__icon--right" src="./assets/desktop/icon-moon.svg" alt="dark mode icon" />
+    </div>
+  </header>
+  <main>
+    <!-- Search bar -->
+    <form class="search-bar__container">
+      <section class="search-bar">
+        <label class="input__label" for="filterByInfos">
+          <img src="./assets/desktop/icon-search.svg" />
+          <input placeholder="Filter by job title..." class="input__field" id="search" type="text" />
+        </label>
+        <button type="button" class="button button--primary" id="allJobs" style="width: 14rem">
+          All jobs
+        </button>
       </section>
-    </main>
-    <script src="./script.js"></script>
-  </body>
+    </form>
+    <!-- Number of jobs listed -->
+    <h1 class="jobs-listed"><span id="jobCounter">0</span> Jobs Listed</h1>
+    <!-- All jobs - grid -->
+    <section class="jobs__grid">
+      <!-- Single job card -->
+
+
+    </section>
+  </main>
+  <script type="module" src="./app.js"></script>
+</body>
+
 </html>
