@@ -1,3 +1,6 @@
 [submodule "ANIMACJE/jfdzr13-materialy-html-css"]
 	path = ANIMACJE/jfdzr13-materialy-html-css
 	url = https://github.com/infoshareacademy/jfdzr13-materialy-html-css.git
+[submodule "jfdzr13-project-javascript-main/DOM/1-warmup/Git/existingProject"]
+	path = jfdzr13-project-javascript-main/DOM/1-warmup/Git/existingProject
+	url = https://github.com/infoshareacademy/jfdzr13-project-javascript.git
