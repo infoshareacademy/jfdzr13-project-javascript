@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            display: flex;
+            height: 100vh;
+            flex-direction: column;
+        }
+
+        .top {
+            height: 100px;
+            width: 100%;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+
+        .bottom {
+            height: 100%;
+            width: 100%;
+
+            display: grid;
+            place-content: center;
+        }
+
+        .square {
+            background-color: red;
+            height: 100px;
+            width: 100px;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="top">
+        <h1 id="detector">detector</h1>
+        <button id="btn">Enable dark mode</button>
+    </div>
+    <div class="bottom">
+        <div class="square" id="square" draggable="true"></div>
+    </div>
+
+    <script src="./script.js"></script>
+</body>
+</html>

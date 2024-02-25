@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body {
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .toggle_toast {
+            padding-block: 25px;
+            padding-inline: 15px;
+            font-size: 20px;
+
+            border: 2px solid blue;
+            border-radius: 5px;
+            background-color: black;
+            color: white;
+
+            cursor: pointer;
+        }
+
+        .toggle_toast:hover {
+            border-color: orange;
+        }
+
+        .toggle_toast:active {
+            background-color: orange;
+        }
+
+
+        .toast_container {
+            position: absolute;
+            bottom: 15px;
+            right: 15px;
+        }
+
+        .toast {
+            background-color: gray;
+            color: white;
+            font-size: 24px;
+            padding: 50px 25px;
+            margin: 10px;
+            border-radius: 10px;
+        }
+    </style>
+
+</head>
+<body>
+    <button class="toggle_toast" id="btn">Show toast message</button>
+
+
+    <div id="toast_container" class="toast_container"></div>
+    <script src="./script.js"></script>
+</body>
+</html>
