@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+        }
+        .header {
+            display: grid;
+            place-content: center;
+        }
+        .form {
+            margin: 0 auto;
+        }
+
+        main {
+            margin-top: 20px;
+            width: 100%;
+            min-height: 500px;
+
+            display: grid;
+            place-content: center;
+        }
+
+        .responseWrapper {
+            background-color: white;
+            width: 400px;
+
+            display: flex;
+            justify-content: space-around;
+            align-items: flex-end;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1>Give me your name</h1>
+        <form id="form" class="form">
+            <input name="name" type="text" placeholder="your name">
+            <button type="submit">Let's check facts!</button>
+        </form>
+    </header>
+    <main>
+        <div id="response" class="responseWrapper"></div>
+    </main>
+    <!-- Ponizej dwa rozwiązania. Żeby zobaczyć efekty jednego, zakomentuj drugie -->
+    <!-- Rozwiązanie z then-catch -->
+    <script src="./then_catch.js"></script>
+
+    <!-- Rozwiązanie z async-await -->
+    <!-- <script src="./async_await.js"></script> -->
+</body>
+</html>
