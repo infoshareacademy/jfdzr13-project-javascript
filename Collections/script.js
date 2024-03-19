@@ -256,14 +256,167 @@ console.log(filterByAge(people, 30));
 
 // Zadanie 11.
 
+// function typeOfCar(obj){                                    // funkcja sprawdza rodzaj auta
+
+//     if(obj.toUpperCase().includes("BMW") || obj.toUpperCase().includes("FORD")){ // weryfikujemy czy marki pojazdów są 'fajne'
+//         return "which is fun car"
+//     }
+//     return "which is boring car";
+// }
+// function userInfo(obj) {                                    // funkcja podająca dane użytkownika w wersij tekstowej
+//     let userDesctiption = [];
+//         obj.map(element => userDesctiption.push([           //przechodzimy przez kolejne indeksy w bazie wprowadzając dane do wersji tekstowej  
+//                                                             //jednocześnie wywołujemy funkcje do sprawdzenia auta. na koniec powstały string wporwadzamy do naszej tablicy osobno dla każdego użytkownika
+//             `The user's ${element.name} is name and the user is ${element.age} years old. The user works as ${element.job} and drives ${element.car} ${typeOfCar(element.car)}`]))
+//     return userDesctiption;
+// }
+
+
+// console.log(userInfo(people))
+
 // Zadanie 12.
+
+// function olderPersons(obj){                    //funkcja wyświetlająca założony tekst na podstawie danych
+//     let overForty = [];
+//     for(let elem of obj){                      // weryfikacja wieku uzytkowników
+//         if(elem.age >= 40){
+//             overForty.push(elem)
+//         }
+//     }
+//     let textOutput = [];
+//     for(let i = 0; i < overForty.length; i++){ // pętla wprowadzająca dane użytkownika do treści
+//         if( i === 0){                          // wprowadzamy osobną treść dla pierwszego użytwkonika
+//             textOutput.push(`The user is ${overForty[i].name} and he is ${overForty[i].age} years old`)
+//         }
+//         else{                                  //wszyscy kolejni użytkoniwcy jeśli jest ich nawet więcej niż dwóch, otrzymują ten sam tekst
+//             textOutput.push(`Next user is ${overForty[i].name} and he is ${overForty[i].age} years old`)
+//         }
+//     };
+//     let sumAge = 0;
+//     for (let elem of overForty){               // pętla sumująca wiek
+//         sumAge = sumAge + elem.age
+//     }
+//     textOutput.push(`Together they have ${sumAge} years`)
+//     return textOutput;
+// }
+
+// console.log(olderPersons(people))
 
 // Zadanie 13.
 
+// function sortingByAge(obj){                          //tworzymy funckje sortującą wiek użytkowników
+//     let sorted = obj.sort((a, b) => a.age - b.age);  // korzystamy z metody sort() do posortowania użytkowników
+//     return sorted;
+// }
+
+// console.log(sortingByAge(people))
+
 // Zadanie 14.
+
+// function dayOfTheWeekYouWereBorn(str) {               // funkcja podająca dzień tygodnia z wprowadzonej daty
+//     let fullDate = new Date(str);                     // korzystamy z obiektu Date, który pzoowli nam zamienić wprowadzony string na format daty
+//     let day = fullDate.getDay();                      // korzystamy z metody getDay() która zwróci "index" dnia tygodnia
+//     let dayNames = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]   // tworzymy tabele z nazwami dni tygodnia
+
+//     return `You were born on ${dayNames[day]} `;      // wprowadzamy konkretny dzień w tekst wybierając prawidłowy dzień tygodnia zgodnie z podanym indexem
+// }
+
+// console.log(dayOfTheWeekYouWereBorn("2000-11-20"))
 
 // Zadanie 15.
 
+// function countWordOccurrences(str) {                // funkcja licząca występowanie słów
+//     let countedWords = {};  
+//     let splitedStr = str.split(" ");                // dzielimy podany string na pojedyńcze słowa
+//     for(let i = 0; i <splitedStr.length; i++){      // przechodzimy przez wszystkie słowa z tablicy
+//         let word = splitedStr[i].replace(".", "")   // tworzymy zmienną przechowująca sprawdzane słowo, jednocześnie kasujemy ewentualny znak interpunkcyjny
+//         if(countedWords[word]){                     // sprawdzamy czy w naszym obiekcie występuje już sprawdzane słowo
+//             countedWords[word]++;                   // jeśli tak to zwiększamy jego wartość
+//         }
+//         else{   // jeśli słowo pojawia się pierwszy raz to nadajmy początkową wartość równą jeden
+//             countedWords[word] = 1;
+//         };
+//     };
+//     return countedWords;
+// }
+
+
+// console.log(countWordOccurrences(
+// 	"JavaScript byl dla mnie skomplikowany a teraz JavaScript jest dla mnie znacznie prostszy. Viva Javascript"
+// ))
+
 // Zadanie 16.
 
+// function toCamelCase(str) {
+//     let stringWithoutSigns;
+//     if(str.includes("_")){                //pozbywamy sie "_" globalnie z tablicy
+//         stringWithoutSigns = str.replace(/_/g, " ");
+//     }
+//     else if(str.includes("-")){           //pozbywamy sie "-"  globalnie z tablicy
+//         stringWithoutSigns = str.replace(/-/g, " ")
+//     }
+//     else{
+//         stringWithoutSigns = str;         // dodajemy ten warunek jeśli zostanie podany string bez znaków -/_
+//     }
+
+//     stringWithoutSigns = stringWithoutSigns.split(" ");  // dzielimy nasz string na osobne słowa
+//     let camelCaseString = "";
+//     for(let i = 0; i < stringWithoutSigns.length; i++){  // wprowadzamy kolejne słowa do pętli która ma cale zmiane wielkości pierwszy liter w każdym słowie
+//         let word = stringWithoutSigns[i].split("")
+//         if(i === 0){                                    // pierwsza litera w pierwszym słowie zostaje pomniejszona
+//             for(let i = 0; i < word.length; i++ ){  
+//                 word[0] = word[0].toLowerCase()
+//             }
+//         }
+//         else{                                          // pierwsza litera w każdym kolejnym słowie zostaje powiększona
+//             for(let i = 0; i < word.length; i++ ){  
+//                 word[0] = word[0].toUpperCase()
+//             }
+
+//         }
+//         camelCaseString += word.join("");              // dodajemy kolejne słowa do naszej zmiennej
+//     }
+
+//     return camelCaseString;
+
+// }
+
+// console.log(toCamelCase("java_script")); 
+// console.log(toCamelCase("java-script")); 
+// console.log(toCamelCase("Java-Script")); 
+// console.log(toCamelCase("asp_Net_Core"));
+
 // Zadanie 17.
+
+// function getStudentTopGrades(arr) {
+//     let topGrades = [];             
+//     for (let elem of arr) {                             // sprawdzamy najwyższą ocenę w tablicy
+//         if(elem.grades.length === 0){                   // jeśli tablica jest pusta wstawiamy najwyższą ocenę 0
+//             topGrades.push(0)
+//         }
+//         else{
+//             topGrades.push(Math.max(...elem.grades))    // wybieramy najwyższą ocenę z tablicy
+//         }
+        
+//     }
+//     return topGrades;
+
+// }
+
+// console.log(getStudentTopGrades([
+//     {
+//         id: 1,
+//         name: "Jacek",
+//         grades: [5, 3, 4, 2, 5, 5],
+//     },
+//     {
+//         id: 2,
+//         name: "Ewa",
+//         grades: [2, 3, 3, 3, 2, 5],
+//     },
+//     {
+//         id: 3,
+//         name: "Zygmunt",
+//         grades: [2, 2, 4, 4, 3, 3],
+//     },
+// ]))
